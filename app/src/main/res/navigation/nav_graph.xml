@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.animalshelter.ui.main.MainFragment"
+        android:label="Главная"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_main_to_detail"
+            app:destination="@id/petDetailFragment" />
+
+        <action
+            android:id="@+id/action_main_to_shop"
+            app:destination="@id/shopFragment" />
+
+        <action
+            android:id="@+id/action_main_to_stats"
+            app:destination="@id/statsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/petDetailFragment"
+        android:name="com.example.animalshelter.ui.detail.PetDetailFragment"
+        android:label="Питомец"
+        tools:layout="@layout/fragment_pet_detail">
+
+        <argument
+            android:name="petId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.animalshelter.ui.shop.ShopFragment"
+        android:label="Магазин"
+        tools:layout="@layout/fragment_shop" />
+
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.example.animalshelter.ui.stats.StatsFragment"
+        android:label="Статистика"
+        tools:layout="@layout/fragment_stats" />
+
+</navigation>
